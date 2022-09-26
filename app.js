@@ -1,4 +1,5 @@
 const addForm = document.querySelector('.add');
+const list = document.querySelector('.todos');
 
 //create a function that will add html content to browser
 
@@ -8,7 +9,9 @@ const generateTemplate = todo => {
         <span>${todo}</span>
         <i class="far fa-trash-alt delete"></i>
     </li>
-    `
+    `;
+
+    list.innerHTML += html;
 };
 
 addForm.addEventListener('submit', e => {
