@@ -10,7 +10,6 @@ const generateTemplate = todo => {
         <i class="far fa-trash-alt delete"></i>
     </li>
     `;
-
     list.innerHTML += html;
 };
 
@@ -18,7 +17,9 @@ addForm.addEventListener('submit', e => {
 
     e.preventDefault();
     const todo = addForm.add.value.trim(); //trim removes any white spaces
-    
-    generateTemplate(todo);
+
+    if (todo.length){
+        generateTemplate(todo);
+    }
 })
 
