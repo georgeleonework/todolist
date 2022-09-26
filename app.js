@@ -1,5 +1,6 @@
 const addForm = document.querySelector('.add');
 const list = document.querySelector('.todos');
+const search = document.querySelector('.search input');
 
 //create a function that will add html content to browser
 
@@ -24,14 +25,27 @@ addForm.addEventListener('submit', e => {
     }
 });
 
-
 //delete todos
 
 list.addEventListener('click', e => {
     if (e.target.classList.contains('delete')){
         e.target.parentElement.remove();
     }
+});
 
+const filterTodos = (term) => {
+    
+}
+
+//keyup event / every time a key is pressed the callback is ran and the term is set to the current value in the input
+search.addEventListener('keyup', () => {
+    const term = search.value.trim();
+    filterTodos(term);
 })
+
+
+
+
+
 
 
